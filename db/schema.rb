@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_135745) do
+ActiveRecord::Schema.define(version: 2021_05_01_155406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calanders", force: :cascade do |t|
+    t.bigint "ingredient_id", null: false
+    t.bigint "month_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ingredient_id"], name: "index_calanders_on_ingredient_id"
+    t.index ["month_id"], name: "index_calanders_on_month_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "ingredient_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ingredient_id"], name: "index_categories_on_ingredient_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "months", force: :cascade do |t|
+    t.string "name"
+    t.string "season"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +57,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_135745) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "calanders", "ingredients"
+  add_foreign_key "calanders", "months"
+  add_foreign_key "categories", "ingredients"
 end

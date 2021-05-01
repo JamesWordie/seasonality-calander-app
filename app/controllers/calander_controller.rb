@@ -1,0 +1,2 @@
+class CalanderController < ApplicationController
+end
