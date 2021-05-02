@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="calander-table">
+    <% @months.each do |month| %>
+      <div class="month">
+        <h1><%= month.name %></h1>
+        <h4><%= month.season %></h4>
+        <ul>
+          <% month.ingredients.each do |ingred| %>
+            <% if ingred.category.name.eql?('Fruits') %>
+              <li><%= ingred.name %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

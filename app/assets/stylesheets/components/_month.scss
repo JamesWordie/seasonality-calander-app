@@ -1,0 +1,40 @@
+.container {
+
+}
+
+.calander-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
+  padding: 20px;
+  margin: auto;
+  grid-gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.month {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .calander-table {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .calander-table {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .calander-table {
+    grid-template-columns: 1fr;
+  }
+}
