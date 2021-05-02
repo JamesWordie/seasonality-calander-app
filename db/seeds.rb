@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Calander.destroy_all
 Ingredient.destroy_all
 Month.destroy_all
-Calander.destroy_all
 Category.destroy_all
 
 january = Month.create!(name: 'January', season: 'Winter')
@@ -35,3 +35,4 @@ foraged = Category.create!(name: 'Foraged')
 asparagus = Ingredient.create!(name: 'Asparagus', category_id: veg.id)
 
 Calander.create!(ingredient_id: asparagus.id, month_id: april.id)
+Calander.create!(ingredient_id: asparagus.id, month_id: may.id)
