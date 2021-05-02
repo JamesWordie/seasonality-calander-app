@@ -32,3 +32,5 @@ fruit = Category.create!(name: 'Fruits')
 herbs = Category.create!(name: 'Herbs')
 foraged = Category.create!(name: 'Foraged')
 
+asparagus = Ingredient.create!(name: 'Asparagus')
+
