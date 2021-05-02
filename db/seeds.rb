@@ -33,6 +33,27 @@ herbs = Category.create!(name: 'Herbs')
 foraged = Category.create!(name: 'Foraged')
 
 asparagus = Ingredient.create!(name: 'Asparagus', category_id: veg.id)
-
 Calander.create!(ingredient_id: asparagus.id, month_id: april.id)
 Calander.create!(ingredient_id: asparagus.id, month_id: may.id)
+
+basil = Ingredient.create!(name: 'Basil', category_id: herbs.id)
+Calander.create!(ingredient_id: basil.id, month_id: may.id)
+Calander.create!(ingredient_id: basil.id, month_id: june.id)
+Calander.create!(ingredient_id: basil.id, month_id: july.id)
+Calander.create!(ingredient_id: basil.id, month_id: august.id)
+Calander.create!(ingredient_id: basil.id, month_id: september.id)
+
+sea_trout = Ingredient.create!(name: 'Sea Trout', category_id: fish.id)
+Calander.create!(ingredient_id: sea_trout.id, month_id: june.id)
+Calander.create!(ingredient_id: sea_trout.id, month_id: july.id)
+Calander.create!(ingredient_id: sea_trout.id, month_id: august.id)
+
+turkey = Ingredient.create!(name: 'Turkey', category_id: game.id)
+Calander.create!(ingredient_id: turkey.id, month_id: december.id)
+
+apple = Ingredient.create!(name: 'Apple', category_id: fruit.id)
+Calander.create!(ingredient_id: apple.id, month_id: september.id)
+Calander.create!(ingredient_id: apple.id, month_id: october.id)
+Calander.create!(ingredient_id: apple.id, month_id: november.id)
+Calander.create!(ingredient_id: apple.id, month_id: december.id)
+Calander.create!(ingredient_id: apple.id, month_id: january.id)
