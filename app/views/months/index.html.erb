@@ -1,17 +1,24 @@
-<div class="container">
+<div class="page_container">
+  <span class="search_banner">
+    <h1>Seasonality Calander</h1>
+    <p>search bar, filter, select 2, pg search by ingredient, category</p>
+  </span>
   <div class="calander-table">
     <% @months.each do |month| %>
       <div class="month">
         <h1><%= month.name %></h1>
         <h4><%= month.season %></h4>
-        <ul>
-          <% month.ingredients.each do |ingred| %>
-            <% if ingred.category.name.eql?('Fruits') %>
-              <li><%= ingred.name %></li>
-            <% end %>
+        <span class='ingredient_selection'>
+          <% month.ingredients.each do |ingredient| %>
+            <%# if ingredient.name.eql?('Apple') %>
+            <div class="ingredient" data-colour="<%= ingredient.category.name %>">
+              <%= ingredient.name %>
+            </div>
+            <%# end %>
           <% end %>
-        </ul>
+        </span>
       </div>
     <% end %>
   </div>
 </div>
+
