@@ -2,6 +2,14 @@
   <span class="search_banner">
     <h1 class='title_banner'>Seasonality Calander</h1>
     <p>search bar, filter, select 2, pg search by ingredient, category</p>
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find you cards"
+      %>
+      <%= submit_tag "Search", class: "btn" %>
+    <% end %>
   </span>
   <div class="calander-table">
     <% @months.each do |month| %>
