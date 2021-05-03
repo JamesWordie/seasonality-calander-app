@@ -1,8 +1,8 @@
 class Month < ApplicationRecord
+  include PgSearch::Model
   has_many :calanders
   has_many :ingredients, through: :calanders
 
-  include PgSearch::Model
   # pg_search_scope :search_by_ingredient_name,
   #                 against: :name,
   #                 associated_against: {

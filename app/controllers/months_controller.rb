@@ -1,12 +1,12 @@
 class MonthsController < ApplicationController
   def index
     @months = Month.all
-    raise
-    # if params[:query].present?
-    #   @ingredients = Ingredient.search_by_ingredient_name(params[:query])
-    # else
-    #   @ingredients = Ingredient.all
-    # end
+    if params[:query].present?
+      raise
+      @ingredients = Ingredient.search_by_ingredient_name(params[:query])
+    else
+      @ingredients = Ingredient.all
+    end
   end
 
   def show
