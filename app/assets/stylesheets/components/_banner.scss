@@ -2,14 +2,14 @@
   text-align: center;
   font-size: 60px;
   font-family: 'Poppins';
+  color: white;
 }
 
 .search_banner {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url('https://source.unsplash.com/1600x900/?fruit
-');
+  background-color: rgba(31,65,75,0.9);
   background-size: cover;
   background-position: center;
 }
