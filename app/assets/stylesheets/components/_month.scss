@@ -17,6 +17,7 @@
   padding: 5px;
   box-shadow: 1px 1px lightgrey;
   margin: 2px;
+  color: white;
 }
 
 .ingredient_selection {
@@ -27,6 +28,34 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+[data-colour="Vegetables"] {
+  background-color: rgb(222, 129, 46);
+}
+
+[data-colour="Fruits"] {
+  background-color: rgb(224, 175, 88);
+}
+
+[data-colour="Meat"] {
+  background-color: rgb(193, 87, 79);
+}
+
+[data-colour="Game"] {
+  background-color: rgb(95,37,87);
+}
+
+[data-colour="Foraged"] {
+  background-color: rgb(74, 48, 50);
+}
+
+[data-colour="Herbs"] {
+  background-color: rgb(161, 203, 118);
+}
+
+[data-colour="Fish & Shellfish"] {
+  background-color: rgb(89, 185, 184);
 }
 
 @media (max-width: 992px) {
