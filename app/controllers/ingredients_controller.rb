@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
   def index
     @months = Month.all
+    @categories = Category.all
     if params[:query].present?
       @ingredients = PgSearch.multisearch(params[:query])
     else
