@@ -27,5 +27,7 @@ import { categoryFilter } from '../components/category_filter';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  categoryFilter();
+  if (document.getElementById('homepage')) {
+    categoryFilter();
+  }
 });
