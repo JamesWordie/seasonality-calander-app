@@ -47,6 +47,16 @@
   justify-content: space-evenly;
 }
 
+.show-month-name {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+
+.show {
+  margin-bottom: 20px;
+}
+
 [data-category="Vegetables"] {
   background-color: rgb(222, 129, 46);
 }

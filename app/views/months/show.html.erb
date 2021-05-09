@@ -1,13 +1,16 @@
-<div class="page_container">
+<span class="search_banner show">
+  <h1 class='show-month-name'><%= @month.name %> </h1>
+</span>
+<div class="container">
   <div class="month-show">
-    <h1><%= @month.name %> </h1>
     <% @categories.each do |category| %>
       <div class="card">
         <h3><%= category.name %></h3>
         <span class="ingredient_selection">
           <% category.ingredients.each do |ingredient| %>
-            <div class="ingredient" data-category="<%= category.name %>">
+            <div class="ingredient ingredient-search" data-category="<%= category.name %>">
               <%= ingredient.name %>
+              <%#= link_to ingredient.name, month_ingredient_path(@ingredient), class: 'ingredient-show-link' %>
             </div>
           <% end %>
         </span>
