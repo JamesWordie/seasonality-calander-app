@@ -1,0 +1,50 @@
+<div class="page_container">
+  <span class="search_banner">
+    <h1 class='title_banner'>Seasonality Calander</h1>
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for an Ingredient."
+      %>
+      <%= submit_tag "Search", class: "btn" %>
+    <% end %>
+  </span>
+  <span class="category-search">
+    <% @categories.each do |category| %>
+      <button class="category" data-category="<%= category.name %>">
+        <%= category.name %>
+      </button>
+    <% end %>
+  </span>
+  <div class="calander-table">
+    <% @months.each do |month| %>
+      <div class="month">
+        <h1><%= month.name %></h1>
+        <h4><%= month.season %></h4>
+        <span class='ingredient_selection'>
+          <% @ingredients.each do |ingredient| %>
+            <% if params[:query].present? %>
+              <% ingredient.searchable.month_ids.each do |id| %>
+                <% if id == month.id  %>
+                  <div class="ingredient" data-category="<%= ingredient.searchable.category.name %>">
+                    <%= ingredient.searchable.name %>
+                  </div>
+                <% end %>
+              <% end %>
+            <% else %>
+              <% ingredient.month_ids.each do |id| %>
+                <% if id == month.id %>
+                  <div class="ingredient" data-category="<%= ingredient.category.name %>">
+                    <%= ingredient.name %>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>
+
