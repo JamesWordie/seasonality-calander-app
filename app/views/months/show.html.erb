@@ -1,0 +1,17 @@
+<div class="page_container">
+  <div class="month-show">
+    <h1><%= @month.name %> </h1>
+    <% @categories.each do |category| %>
+      <div class="card">
+        <h3><%= category.name %></h3>
+        <span class="ingredient_selection">
+          <% category.ingredients.each do |ingredient| %>
+            <div class="ingredient" data-category="<%= category.name %>">
+              <%= ingredient.name %>
+            </div>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>
