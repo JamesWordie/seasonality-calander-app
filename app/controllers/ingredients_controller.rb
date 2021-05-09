@@ -11,12 +11,12 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
-    @month = Month.find(params[:month_id])
+    @category = @ingredient.category
   end
 
   private
 
   def strong_params
-    params.require(:ingredient).permit(:name, :month_id)
+    params.require(:ingredient).permit(:name)
   end
 end

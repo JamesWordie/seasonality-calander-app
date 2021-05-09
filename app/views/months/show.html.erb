@@ -9,8 +9,7 @@
         <span class="ingredient_selection">
           <% category.ingredients.each do |ingredient| %>
             <div class="ingredient ingredient-search" data-category="<%= category.name %>">
-              <%= ingredient.name %>
-              <%#= link_to ingredient.name, month_ingredient_path(@ingredient), class: 'ingredient-show-link' %>
+              <%= link_to ingredient.name, ingredient_path(ingredient), class: 'ingredient-show-link' %>
             </div>
           <% end %>
         </span>
