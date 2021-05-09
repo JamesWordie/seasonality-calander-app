@@ -10,10 +10,11 @@
   font-size: 20px;
   border-radius: 10px;
   padding: 5px;
+  margin: 5px;
 }
 
 .category:hover {
-  transform: style(1.2);
+  transform: scale(1.2);
 }
 
 .search_banner > form {
@@ -29,4 +30,19 @@
     margin-left: 5px;
     border-radius: 2px;
   }
+}
+
+.reset {
+  background-color: white;
+  position: absolute;
+  left: 20px;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.reset:hover {
+  transform: scale(1.1);
+  transition: cubic-bezier(0.51, 0.01, 0.39, 0.98), 0.5s;
+  background-color: red;
+  color: white;
 }
