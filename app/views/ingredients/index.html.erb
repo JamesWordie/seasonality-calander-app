@@ -24,6 +24,7 @@
         <h1 class="month-name"><%= link_to month.name, month_path(month) %></h1>
         <h4><%= month.season %></h4>
         <span class='ingredient_selection'>
+          <%# selected_ten = @ingredients.sample(20) %>
           <% @ingredients.each do |ingredient| %>
             <% if params[:query].present? %>
               <% ingredient.searchable.month_ids.each do |id| %>

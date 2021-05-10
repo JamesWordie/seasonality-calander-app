@@ -1,3 +1,5 @@
+const buttonSpan = document.querySelector('span.category-search');
+
 const findIngredientDiv = (categoryBtnName) => {
   const ingredientList = Array.from(document.querySelectorAll('div.ingredient'));
   ingredientList.map(ingredient => {
@@ -13,14 +15,13 @@ const categorySearchButton = (event) => {
   categoryButtons.forEach(category => {
      if (category.dataset.category === categoryBtnName) {
         findIngredientDiv(categoryBtnName);
-        console.log(category.style);
-         // console.log(`Winner you found ${categoryBtnName}`);
+        // console.log(category.style);
+        // console.log(`Winner you found ${categoryBtnName}`);
      };
   });
 };
 
 const categoryFilter = () => {
-  const buttonSpan = document.querySelector('span.category-search');
   buttonSpan.querySelectorAll('button.category').forEach(button => {
     button.addEventListener('click', categorySearchButton);
   });
