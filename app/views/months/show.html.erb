@@ -7,10 +7,12 @@
       <div class="card">
         <h3><%= category.name %></h3>
         <span class="ingredient_selection">
-          <% category.ingredients.each do |ingredient| %>
-            <div class="ingredient ingredient-search" data-category="<%= category.name %>">
-              <%= link_to ingredient.name, ingredient_path(ingredient), class: 'ingredient-show-link' %>
-            </div>
+          <% category.ingredients.each do |ingredient|  %>
+            <% if ingredient.month_ids.any?(@month.id) %>
+              <div class="ingredient ingredient-search" data-category="<%= category.name %>">
+                <%= link_to ingredient.name, ingredient_path(ingredient), class: 'ingredient-show-link' %>
+              </div>
+            <% end %>
           <% end %>
         </span>
       </div>
