@@ -2,7 +2,14 @@
   text-align: center;
   font-size: 60px;
   font-family: 'Poppins';
-  color: white;
+  a {
+    color: white;
+  }
+}
+
+.title_banner > a:hover {
+  text-decoration: none;
+  color: lightgrey;
 }
 
 .search_banner {

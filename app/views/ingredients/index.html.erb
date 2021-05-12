@@ -1,6 +1,8 @@
 <div class="page_container" id='homepage'>
   <span class="search_banner">
-    <h1 class='title_banner'>Seasonality Calander</h1>
+    <h1 class='title_banner'>
+      <%= link_to 'Seasonality Calander', root_path, title: 'Homepage' %>
+    </h1>
     <%= form_tag root_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
