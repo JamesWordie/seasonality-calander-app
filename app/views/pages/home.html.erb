@@ -5,6 +5,10 @@
   <% @categories.each do |category| %>
     <div class="card" id='homepage-card'>
       <h3><%= category.name %></h3>
+      <div class="image">
+        <% category.name == 'Fish & Shellfish' ? source = ('Fish' + (rand(1..6)).to_s) : source = (category.name + (rand(1..6)).to_s) %>
+        <%= image_tag "https://res.cloudinary.com/dqu728tid/image/upload/v1621102820/#{source}.jpg", crop: :fit %>
+      </div>
       <span class="ingredient_selection">
         <% category.ingredients.each do |ingredient| %>
           <% if ingredient.month_ids.any?(@month.id) %>
