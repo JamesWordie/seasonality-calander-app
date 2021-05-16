@@ -1,9 +1,18 @@
-<span class="search_banner show">
-  <h1 class='show-month-name'><%= @ingredient.name %> </h1>
-</span>
+<div>
+  <h3 class="month-name"><%= @ingredient.name %></h3>
+</div>
 <div class="container">
-  <div class="card">
-    <%= @ingredient.name %>
-    <%= @category.name %>
+  <div class="content">
+    <div class="category">
+      <h4><%= @category.name %></h4>
+      <% @category.ingredients.sample(5).each do |ingredient| %>
+        <div class="ingredient" data-category="<%= ingredient.category.name %>">
+          <%= ingredient.name %>
+        </div>
+      <% end %>
+    </div>
+    <div class="recipes">
+
+    </div>
   </div>
 </div>

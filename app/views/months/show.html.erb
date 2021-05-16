@@ -1,23 +1,27 @@
-<div>
-  <h3 class="month-name"><%= @month.name %></h3>
-</div>
-<div class="calander-table">
-  <% @categories.each do |category| %>
-    <div class="card" id='homepage-card'>
-      <div class="image">
-        <h3 class='home-category-name'><%= category.name %></h3>
-        <% category.name == 'Fish & Shellfish' ? source = ('Fish')  : source = (category.name) %>
-        <%= image_tag "https://res.cloudinary.com/dqu728tid/image/upload/v1621102820/#{source}.jpg", crop: :fit %>
-      </div>
-      <span class="ingredient_selection">
-        <% category.ingredients.each do |ingredient| %>
-          <% if ingredient.month_ids.any?(@month.id) %>
-            <div class="ingredient ingredient-search" data-category="<%= category.name %>">
-              <%= link_to ingredient.name, ingredient_path(ingredient), class: 'ingredient-show-link' %>
-            </div>
+<div class="container">
+  <div>
+    <h3 class="month-name"><%= @month.name %></h3>
+  </div>
+  <div class="calander-table">
+    <% @categories.each do |category| %>
+      <div class="card" id='homepage-card'>
+        <div class="image">
+          <h3 class='home-category-name'><%= category.name %></h3>
+          <% category.name == 'Fish & Shellfish' ? source = ('Fish')  : source = (category.name) %>
+          <%= image_tag "https://res.cloudinary.com/dqu728tid/image/upload/v1621102820/#{source}.jpg", crop: :fit %>
+        </div>
+        <span class="ingredient_selection">
+          <% category.ingredients.each do |ingredient| %>
+            <% if ingredient.month_ids.any?(@month.id) %>
+              <div class="ingredient ingredient-search" data-category="<%= category.name %>">
+                <%= ingredient.name %>
+                <%#= link_to ingredient.name, ingredient_path(ingredient), class: 'ingredient-show-link' %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </span>
-    </div>
-  <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
 </div>
+
