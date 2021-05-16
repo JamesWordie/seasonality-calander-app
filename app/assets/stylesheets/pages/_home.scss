@@ -17,3 +17,9 @@
 .card {
   padding-top: 0;
 }
+
+.container-fluid {
+  justify-content: space-between !important;
+  display: inline-flex;
+  flex-flow: row-reverse;
+}

@@ -10,3 +10,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+  background-color: rgba(31,65,75,0.9);
+  a, ul {
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+  }
+}

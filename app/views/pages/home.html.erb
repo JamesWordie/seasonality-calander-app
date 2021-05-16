@@ -1,5 +1,12 @@
-<span class="search_banner show">
-  <h1 class='show-month-name'><%= @month.name %> </h1>
+<span class="homepage_banner show">
+  <h1 class='app-name'>Seasonality Calander</h1>
+  <div class="text">
+    <p>
+      Welcome to my version of Scot Food & Drinks Seasonality Calander.
+      This is my take on their PDF version showing whats in sesosn for each month, separted out by categories.
+    </p>
+  </div>
+  <%= link_to 'Full Calander', ingredients_path, class:'ingredient-link' %>
 </span>
 <div class="calander-table">
   <% @categories.each do |category| %>

@@ -1,4 +1,3 @@
-const buttonSpan = document.querySelector('span.category-search');
 
 const findIngredientDiv = (categoryBtnName) => {
   const ingredientList = Array.from(document.querySelectorAll('div.ingredient'));
@@ -22,6 +21,7 @@ const categorySearchButton = (event) => {
 };
 
 const categoryFilter = () => {
+  const buttonSpan = document.querySelector('span.category-search');
   buttonSpan.querySelectorAll('button.category').forEach(button => {
     button.addEventListener('click', categorySearchButton);
   });
